@@ -15,7 +15,7 @@ new ChatinvestorStack(app, "ChatinvestorStack", {
 
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */
-  env: { account: "484907501993", region: "ap-southeast-2" },
+  env: { account: process.env.AWS_ACCOUNT_ID, region: process.env.AWS_REGION },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
