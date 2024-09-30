@@ -2,13 +2,15 @@
   "name": "chatinvestor",
   "version": "0.1.0",
   "bin": {
-    "chatinvestor": "bin/chatinvestor.js"
+    "chatinvestor": "infra/chatinvestor.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "tsc -p ./infra/tsconfig.json",
+    "watch": "tsc -w -p ./infra/tsconfig.json",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk --output infra/cdk.out",
+    "deploy": "cdk deploy --output infra/cdk.out",
+    "synth": "cdk synth --output infra/cdk.out"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
